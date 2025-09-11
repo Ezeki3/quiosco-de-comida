@@ -1,9 +1,9 @@
 import { create } from "zustand";
-import { OrederItem } from "./types";
+import { OrderItem } from "./types";
 import { Product } from "@prisma/client";
 
 interface Store {
-    order: OrederItem[]
+    order: OrderItem[]
     addToOrder: (product: Product) => void
 }
 
