@@ -7,7 +7,6 @@ type ProductDetailsProps = {
 }
 
 export default function ProductDetails({item}: ProductDetailsProps) {
-    console.log(item);
     
   return (
         <div className="shadow space-y-1 p-4 bg-white  border-t border-gray-200 ">
