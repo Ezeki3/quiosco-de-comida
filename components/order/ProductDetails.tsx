@@ -17,6 +17,7 @@ export default function ProductDetails({item}: ProductDetailsProps) {
   const decreaseQuantity = useStore( (state) => state.decreaseQuantity);
   const disableDecreaseButton = useMemo( () => item.quantity === MIN_ITEMS, [item])
   const disableIncreaseButton = useMemo( () => item.quantity === MAX_ITEMS, [item])
+  const removeItem = useStore((state) => state.removeItem)
 
   return (
         <div className="shadow space-y-1 p-4 bg-white  border-t border-gray-200 ">
@@ -26,7 +27,7 @@ export default function ProductDetails({item}: ProductDetailsProps) {
 
                     <button
                     type="button"
-                    onClick={() => {}}
+                    onClick={() => removeItem(item.id)}
                     >
                     <XCircleIcon className="text-red-600 h-8 w-8"/>
                     </button>
