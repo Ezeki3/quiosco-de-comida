@@ -3,7 +3,7 @@ import { Product } from "@prisma/client";
 import { useStore } from "@/src/store";
 
 type AddProductButtonProps = {
-    product: Product
+  product: Product
 }
 
 export default function AddProductButton( {product}: AddProductButtonProps) {
@@ -18,5 +18,6 @@ export default function AddProductButton( {product}: AddProductButtonProps) {
     >
         Agregar
     </button>
+    
   )
 }
