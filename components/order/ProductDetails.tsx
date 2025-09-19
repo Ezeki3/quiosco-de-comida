@@ -20,7 +20,7 @@ export default function ProductDetails({item}: ProductDetailsProps) {
   const removeItem = useStore((state) => state.removeItem)
 
   return (
-        <div className="shadow space-y-1 p-4 bg-white  border-t border-gray-200 ">
+        <div className="shadow space-y-1 p-4 bg-white border-t border-gray-200 ">
             <div className="space-y-4">
                 <div className="flex justify-between items-start">
                     <p className="text-xl font-bold">{item.name} </p>
