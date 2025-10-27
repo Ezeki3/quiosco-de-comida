@@ -1,6 +1,11 @@
+import ProductsPagination from "@/components/products/ProductsPagination";
 import ProductTable from "@/components/products/ProductsTable";
 import Heading from "@/components/ui/Heading";
 import { prisma } from "@/src/lib/prisma";
+
+async function productCount(){
+  return await prisma.product.count();
+}
 
 async function getProducts(page: number, pageSize: number) {
   const skip = (page - 1) * pageSize;
@@ -31,13 +36,20 @@ export default async function ProductsPage({
   const pageSize = 10;
  
   // Obtén los productos desde la base de datos
-  const products = await getProducts(currentPage, pageSize);
+  const productsData =  getProducts(currentPage, pageSize);
+  const totalProductsData =  productCount();
+  const [products, totalProducts] = await Promise.all([productsData, totalProductsData])  
  
   return (
     <>
       <Heading>Manage Products</Heading>
  
       <ProductTable products={products} />
+
+      <ProductsPagination
+        page={page}
+      />
+
     </>
   );
 }
