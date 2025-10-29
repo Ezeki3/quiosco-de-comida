@@ -39,7 +39,8 @@ export default async function ProductsPage({
   const productsData =  getProducts(currentPage, pageSize);
   const totalProductsData =  productCount();
   const [products, totalProducts] = await Promise.all([productsData, totalProductsData])  
- 
+  const totalPages = Math.ceil(totalProducts / pageSize)
+  
   return (
     <>
       <Heading>Manage Products</Heading>
@@ -48,6 +49,7 @@ export default async function ProductsPage({
 
       <ProductsPagination
         page={page}
+        totalPages={totalPages}
       />
 
     </>
