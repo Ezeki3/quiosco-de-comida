@@ -55,7 +55,7 @@ export default async function ProductsPage({
 
   return (
     <>
-      <Heading>Manage Products</Heading>
+      <Heading>Administrar Productos</Heading>
 
       <div className="flex flex-col lg:flex-row lg:justify-between gap-5">
         <Link
