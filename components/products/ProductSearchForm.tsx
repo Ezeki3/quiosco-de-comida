@@ -1,7 +1,6 @@
 "use client"
 import { SearchSchema } from "@/src/schema"
 import { toast } from "react-toastify"
-import { redirect } from "next/navigation"
 import { useRouter } from "next/navigation"
 
 export default function ProductSearchForm() {
