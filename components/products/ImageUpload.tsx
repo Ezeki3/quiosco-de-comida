@@ -15,7 +15,7 @@ export default function ImageUpload( {image}: {image:string | undefined} ) {
         if (result.event === 'success') {
           widget.close()
 
-          // @ts-ignore
+          // @ts-expect-error El tipo de la librería de Cloudinary es incorrecto.
           setImageUrl(result.info.secure_url)
         }
         
